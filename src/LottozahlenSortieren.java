@@ -1,4 +1,5 @@
 import java.lang.Math;
+import java.util.Arrays;
 public class LottozahlenSortieren {
     public static void main(String [] args) {
         int[] lottozahlen = new int[6];
@@ -22,11 +23,53 @@ public class LottozahlenSortieren {
                 if (schonImArray) {
                     z--;
                 } else {
+                    /*
+                    Zufällige Lottozahlen nach For loop ausgeben
                     System.out.println(lottozahlen[z]);
+                     */
                     whileZaehler++;
                 }
             }
         }
+        sortieren(lottozahlen);
 
+    }
+    public static void sortieren (int lottozahlen[]) {
+        /*
+        // Mit Arrays Sort → aufsteigend sortiert
+
+        System.out.println("\nBefor Sorting...");
+        for (int i : lottozahlen) {
+            System.out.print(i + " ");
+        }
+        Arrays.sort(lottozahlen);
+        System.out.println("\nAfther Sorting...");
+        for (int j : lottozahlen) {
+            System.out.print(j + " ");
+        }
+        */
+
+        // mit eigenem Code → aufsteigend sortiert
+        System.out.println("\nBefor Sorting...");
+        for (int i : lottozahlen) {
+            System.out.print(i + " ");
+        }
+        for (int i = 0; i < lottozahlen.length; i++) {
+            for (int j = 0; j < lottozahlen.length; j++) {
+                if (lottozahlen[i] < lottozahlen[j]) {
+                    int temp = lottozahlen[i];
+                    lottozahlen[i] = lottozahlen[j];
+                    lottozahlen[j] = temp;
+                }
+            }
+        }
+        System.out.println("\nAfther Sorting...");
+        for (int j : lottozahlen) {
+            System.out.print(j + " ");
+        }
+
+        ausgeben(lottozahlen);
+    }
+    public static void ausgeben (int lottozahlen[]) {
     }
 }
