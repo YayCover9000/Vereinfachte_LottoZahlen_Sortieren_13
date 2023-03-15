@@ -71,5 +71,10 @@ public class LottozahlenSortieren {
         ausgeben(lottozahlen);
     }
     public static void ausgeben (int lottozahlen[]) {
+        System.out.println("\nLottozahlen: ");
+        for (int i: lottozahlen) {
+            System.out.print(i + " ");
+        }
     }
+
 }
